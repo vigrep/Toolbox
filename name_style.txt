@@ -1,0 +1,27 @@
+## 工程目录、文件命名规范 ##
+
+module=module工程名
+package=包名
+name=将要新建的文件的功能名称（新建闹钟设置界面，name=ClockSetting)
+
+1. module
+	可以代表module整体功能的英文名称（小写）
+2. package
+	可以代表package所包含的文件的整体功能的英文名称（小写）
+3. Activity(Fragment)
+	module名+name+Activity(Fragment)
+	eg: clock module下的闹钟设置界面，起名为：ClockSettingActivity.java
+	注：xx
+4. Adapter文件
+	xxxx + Adapter.java
+	eg: ClockListAdapter.java
+5. 布局文件
+	1> activity布局文件
+		module名+下划线+activity
+		eg: ClockSettingActivity.java对应的布局文件：clock_setting_activity.xml
+	2> fragment布局文件
+		module名+下划线+fragment
+		eg: ClockSettingFragment.java对应的布局文件：clock_setting_fragment.xml
+	3> ListView的item布局文件
+		lv_item_xxxxxx.xml
+
