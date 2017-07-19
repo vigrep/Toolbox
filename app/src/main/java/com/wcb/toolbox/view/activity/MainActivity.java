@@ -1,12 +1,12 @@
-package com.wcb.toolbox;
+package com.wcb.toolbox.view.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import com.wcb.clock.ClockMainActivity;
+import com.wcb.clock.view.activity.ClockMainActivity;
+import com.wcb.toolbox.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,5 +17,6 @@ public class MainActivity extends AppCompatActivity {
     public void testModule(View v) {
         Intent intent = new Intent(this, ClockMainActivity.class);
         startActivity(intent);
+
     }
 }
