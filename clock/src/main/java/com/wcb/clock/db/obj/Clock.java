@@ -31,6 +31,9 @@ public class Clock {
     private int shakeCount;         //晃动次数
     private int shakeLevel;         //晃动的强度级别
 
+    //一周的分钟数
+    private static int weekTime = 1440;         //晃动的强度级别
+
     public enum Repeat {
         MONDAY((byte) 0x01),
         TUESDAY((byte) 0x02),
@@ -89,6 +92,25 @@ public class Clock {
 
     public boolean dayEnable(Repeat day) {
         return (dayOfWeek & day.getValue()) > 0;
+    }
+
+    /**
+     * 获取最近的提醒时间
+     * @param day current day of week
+     * @return
+     */
+    public int getNearestTime(byte day){
+        byte currentDay = day;
+        int nearestTime = -1;
+        do{
+            if(dayIsEnable(currentDay))
+                nearestTime = time+valueOfDay(currentDay)*weekTime;
+        }while(valueOfDay(currentDay) < valueOfDay(Repeat.SUNDAY.getValue()));
+        return nearestTime;
+    }
+
+    private int valueOfDay(byte day){
+        return day & 0xFF;
     }
 
     // ************************************ 以下自动生成 ****************************
